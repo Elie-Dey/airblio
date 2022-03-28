@@ -159,15 +159,6 @@ function getClients(){
 }
 function postClients(){
   global $db;
-
-  if(!empty($_POST)) {
-  //Post pas vide, on verifie que toutes les données sont présentes
-
-  if(
-    isset($_POST["nom"], $_POST["adresse"], $_POST["reference"])
-    && !empty($_POST["nom"]) && !empty($_POST["adresse"]) &&  !empty($_POST["reference"])
-  ) {
-  
   //Traiter les données
   $nom = htmlspecialchars($_POST["nom"]);
   $adresse = htmlspecialchars($_POST["adresse"]);
@@ -192,9 +183,4 @@ function postClients(){
         die("Une erreur est survenue ");
 
       };
-    } else {
-      echo json_encode(["status " => "error", "message" => "Erreur de transmission"]);
-    }
-
-    }
 }

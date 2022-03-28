@@ -133,68 +133,25 @@ if(array_key_exists("task", $_GET)){
   
 }
 
-if($task == "write"){
-  // postClients();
-
+if($task = "write"){
+  postClient();
 } else {
-  getClients();
+  getClient();
+  
 }
 
 
-//Fonction getClients pour obtenir l'ensemble de clients
+
+
 function getClients(){
   global $db;
 
   //Requete sur la base de données pour avoir la liste des client;
 
-   $resultats = $db->query("SELECT * FROM client");
- 
+  $resultats = $db->query("SELECT * FROM client");
+
   //On traie les resultats 
 
   $clients = $resultats->fetchAll();
-  
- 
-    echo json_encode($clients);
-
-}
-function postClients(){
-  global $db;
-
-  if(!empty($_POST)) {
-  //Post pas vide, on verifie que toutes les données sont présentes
-
-  if(
-    isset($_POST["nom"], $_POST["adresse"], $_POST["reference"])
-    && !empty($_POST["nom"]) && !empty($_POST["adresse"]) &&  !empty($_POST["reference"])
-  ) {
-  
-  //Traiter les données
-  $nom = htmlspecialchars($_POST["nom"]);
-  $adresse = htmlspecialchars($_POST["adresse"]);
-  $reference = htmlspecialchars($_POST["reference"]);
-
-  //On ecrit ma requete 
-   $sql = "INSERT INTO `client` (`id`, `nom`, `adresse`, `reference`) 
-           VALUES (NULL, :nom, :adresse, :reference)";
-
-  //on prepare la requete
-      $query = $db->prepare($sql);
-
-   //On injecte les valeurs
-      
-      $query->bindValue(":nom", $nom);
-      $query->bindValue(":adresse", $adresse);
-      $query->bindValue(":reference", $reference);
-
-    //On execute la requete 
-
-      if(!$query->execute()){
-        die("Une erreur est survenue ");
-
-      };
-    } else {
-      echo json_encode(["status " => "error", "message" => "Erreur de transmission"]);
-    }
-
-    }
+  echo json_encode($clients);
 }

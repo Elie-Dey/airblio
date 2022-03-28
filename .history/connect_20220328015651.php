@@ -193,7 +193,7 @@ function postClients(){
 
       };
     } else {
-      echo json_encode(["status " => "error", "message" => "Erreur de transmission"]);
+      echo json_encode(["Satuts " => "Error"])
     }
 
     }

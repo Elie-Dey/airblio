@@ -192,8 +192,6 @@ function postClients(){
         die("Une erreur est survenue ");
 
       };
-    } else {
-      echo json_encode(["status " => "error", "message" => "Erreur de transmission"]);
     }
 
     }
