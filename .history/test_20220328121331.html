@@ -15,21 +15,33 @@
   </head>
   <body>
     <h1>Ajouter un client</h1>
-    <form action="connect.php" method="POST">
+    <form action="connect.php?task=write" method="POST">
       <label for="nom">Nom Client </label>
       <input type="text" name="nom" id="nom" /> <br />
       <label for="Adresse">Adresse Client</label>
       <input type="text" name="adresse" id="adresse" /> <br />
       <label for="reference">Reference Client</label>
       <input type="text" name="reference" id="reference" />
-      <input type="submit" value="Envoyer" />
+      <input type="submit" value="Creer client" />
     </form>
 
 
     <div >
+  <table>
+  <tr>
+    <th>ID</th>
+    <th>Nom</th>
+    <th>Adresse</th>
+    <th>Reference</th>
+  </tr>
+  <tr class="display-client">
+    <td>123456789</td>
+    <td>12345</td>
+    <td>123.555.789</td>
+    <td>John Johnny</td> 
+  </tr> <br>
 
-    <p> ID  Nom   Adresse Reference </p> <br>
-  <div class="display-client"></div>
+    </div>
     <script src="js/app.js"></script>
   </body>
 </html>

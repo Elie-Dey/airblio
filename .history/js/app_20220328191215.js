@@ -64,7 +64,7 @@ function getClients() {
   requeteAjax.send();
 }
 
-function postClients(event) {
+function postClient(event) {
   //Stopper le submit du formulaire
 
   event.preventDefault();
@@ -72,27 +72,6 @@ function postClients(event) {
   //Récuperation des données du formulaire
 
   const nom = document.querySelector("#nom");
-  const adresse = document.querySelector("#adresse");
-  const reference = document.querySelector("#reference");
-
-  //Conditionner les données
-
-  const data = new FormData();
-  data.append("nom", nom.value);
-  data.append("adresse", adresse.value);
-  data.append("reference", reference.value);
-
-  //  Configuration de la requette Ajax
-
-  const requeteAjax = new XMLHttpRequest();
-  requeteAjax.open("POST", "connect.php?task=write");
-  requeteAjax.onload = function () {
-    nom.value = "";
-    adresse.value = "";
-    reference.value = "";
-    getClients();
-  };
-
-  requeteAjax.send(data);
+  const adresse = document.querySelector("#nom");
+  const reference = document.querySelector("#nom");
 }
-document.querySelector("form").addEventListener("submit", postClients);

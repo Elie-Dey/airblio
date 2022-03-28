@@ -87,8 +87,8 @@ function postClients(event) {
   const requeteAjax = new XMLHttpRequest();
   requeteAjax.open("POST", "connect.php?task=write");
   requeteAjax.onload = function () {
-    nom.value = "";
-    adresse.value = "";
+    nom.value = " ";
+    adresse.value = " ";
     reference.value = "";
     getClients();
   };

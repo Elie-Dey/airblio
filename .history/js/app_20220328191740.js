@@ -64,7 +64,7 @@ function getClients() {
   requeteAjax.send();
 }
 
-function postClients(event) {
+function postClient(event) {
   //Stopper le submit du formulaire
 
   event.preventDefault();
@@ -87,12 +87,13 @@ function postClients(event) {
   const requeteAjax = new XMLHttpRequest();
   requeteAjax.open("POST", "connect.php?task=write");
   requeteAjax.onload = function () {
-    nom.value = "";
-    adresse.value = "";
-    reference.value = "";
     getClients();
+  };
   };
 
   requeteAjax.send(data);
+
+  
+
+
 }
-document.querySelector("form").addEventListener("submit", postClients);
