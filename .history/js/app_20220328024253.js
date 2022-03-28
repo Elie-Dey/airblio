@@ -53,10 +53,11 @@ function getClients() {
     </tr>
       `;
       })
-      .join("");
+      .join(" ");
 
     const clients = document.querySelector(".display-client");
     clients.innerHTML = html;
+    5;
   };
 
   //On envoie la requete

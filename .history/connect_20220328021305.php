@@ -137,7 +137,7 @@ if($task == "write"){
   postClients();
 
 } else {
-
+  
   getClients();
 }
 
@@ -198,7 +198,7 @@ function postClients(){
 
       echo json_encode(["status" => "success"]);
     } else {
-      echo json_encode(["status" => "error"]);
+       die("Formulaire pas complet");
     }
 
     }

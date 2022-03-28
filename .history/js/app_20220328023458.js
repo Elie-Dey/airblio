@@ -46,17 +46,12 @@ function getClients() {
     const html = resultat
       .map(function (client) {
         return `
-      <tr>
     <td>${client.nom}</td>
     <td>${client.adresse}</td>
     <td>${client.reference}</td>
-    </tr>
       `;
       })
-      .join("");
-
-    const clients = document.querySelector(".display-client");
-    clients.innerHTML = html;
+      .join(" ");
   };
 
   //On envoie la requete

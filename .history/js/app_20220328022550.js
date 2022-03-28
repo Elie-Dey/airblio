@@ -43,22 +43,24 @@ function getClients() {
 
   requeteAjax.onload = function () {
     const resultat = JSON.parse(requeteAjax.responseText);
-    const html = resultat
-      .map(function (client) {
-        return `
-      <tr>
-    <td>${client.nom}</td>
-    <td>${client.adresse}</td>
-    <td>${client.reference}</td>
-    </tr>
-      `;
-      })
-      .join("");
-
-    const clients = document.querySelector(".display-client");
-    clients.innerHTML = html;
+    console.log(resultat);
   };
 
   //On envoie la requete
   requeteAjax.send();
 }
+
+// $(document).ready(function () {
+//   $("#display").click(function () {
+//     $.ajax({
+//       //create an ajax request to display.php
+//       type: "GET",
+//       url: "connect.php",
+//       dataType: "html", //expect html to be returned
+//       success: function (response) {
+//         $("#responsecontainer").html(response);
+//         //alert(response);
+//       },
+//     });
+//   });
+// });

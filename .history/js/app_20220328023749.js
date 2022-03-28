@@ -53,10 +53,9 @@ function getClients() {
     </tr>
       `;
       })
-      .join("");
+      .join(" ");
 
-    const clients = document.querySelector(".display-client");
-    clients.innerHTML = html;
+    console.log(html);
   };
 
   //On envoie la requete

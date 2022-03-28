@@ -104,26 +104,7 @@
     
 // }
 
-//Connexion à la base 
 
-define("DBHOST", "localhost");
-      define("DBUSER", "root");
-      define("DBPASS", "");
-      define("DBNAME", "test");
-
-  
- $dsn = "mysql:dbname=".DBNAME.";host=".DBHOST;
- try{
-        //On instancie PDO
-
-          $db = new PDO($dsn, DBUSER, DBPASS);
-
-          //On s'assure d'envoyer les données en utf8
-
-          $db->exec("SET NAMES utf8");
-      }catch(PDOException $e){
-          die($e->getMessage());
-      }
 
 $task = "list";
 
@@ -137,7 +118,6 @@ if($task == "write"){
   postClients();
 
 } else {
-
   getClients();
 }
 
@@ -158,9 +138,6 @@ function getClients(){
     echo json_encode($clients);
 
 }
-
-
-
 function postClients(){
   global $db;
 
@@ -177,6 +154,27 @@ function postClients(){
   $adresse = htmlspecialchars($_POST["adresse"]);
   $reference = htmlspecialchars($_POST["reference"]);
 
+
+  //Connexion à la base 
+
+define("DBHOST", "localhost");
+      define("DBUSER", "root");
+      define("DBPASS", "");
+      define("DBNAME", "test");
+
+  
+ $dsn = "mysql:dbname=".DBNAME.";host=".DBHOST;
+ try{
+        //On instancie PDO
+
+          $db = new PDO($dsn, DBUSER, DBPASS);
+
+          //On s'assure d'envoyer les données en utf8
+
+          $db->exec("SET NAMES utf8");
+      }catch(PDOException $e){
+          die($e->getMessage());
+      }
   //On ecrit ma requete 
    $sql = "INSERT INTO `client` (`id`, `nom`, `adresse`, `reference`) 
            VALUES (NULL, :nom, :adresse, :reference)";
@@ -198,7 +196,7 @@ function postClients(){
 
       echo json_encode(["status" => "success"]);
     } else {
-      echo json_encode(["status" => "error"]);
+       die("Formulaire pas complet");
     }
 
     }

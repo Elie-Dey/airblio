@@ -43,20 +43,13 @@ function getClients() {
 
   requeteAjax.onload = function () {
     const resultat = JSON.parse(requeteAjax.responseText);
-    const html = resultat
-      .map(function (client) {
-        return `
-      <tr>
+    const html = resultat.map(function (client) {
+      return `
     <td>${client.nom}</td>
     <td>${client.adresse}</td>
     <td>${client.reference}</td>
-    </tr>
       `;
-      })
-      .join("");
-
-    const clients = document.querySelector(".display-client");
-    clients.innerHTML = html;
+    });
   };
 
   //On envoie la requete

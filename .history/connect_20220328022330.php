@@ -198,7 +198,7 @@ function postClients(){
 
       echo json_encode(["status" => "success"]);
     } else {
-      echo json_encode(["status" => "error"]);
+      echo json_encode(["status" => "error"])
     }
 
     }
