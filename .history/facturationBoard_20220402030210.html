@@ -88,7 +88,9 @@
       </div>
       <div class="navbar-nav">
         <div class="nav-item text-nowrap d-flex">
-          <a class="nav-link px-3 text-uppercase" href="#">Création facture</a>
+          <a class="nav-link px-3 text-uppercase" href="#"
+            >Gestion des Factures</a
+          >
         </div>
       </div>
       <div class="navbar-nav">
@@ -112,25 +114,29 @@
           <div class="position-sticky pt-3">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="dashboard.html">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="dashboard.html"
+                >
                   <span data-feather="home"></span>
                   Accueil
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="creationFacture.html">
+                <a class="nav-link" href="creationFacture.html">
                   <span data-feather="file-plus"></span>
                   Nouvelle facture
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="mesfactures.html">
                   <span data-feather="list"></span>
                   Mes factures
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="interventions.html">
                   <span data-feather="tool"></span>
                   Interventions
                 </a>
@@ -140,123 +146,40 @@
         </nav>
 
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-5">
-          <form class="row g-3 needs-validation" novalidate>
-            <div class="col-md-4 col-lg-3">
-              <label for="validationCustom01" class="form-label"
-                >First name</label
-              >
-              <input
-                type="text"
-                class="form-control"
-                id="validationCustom01"
-                value="Mark"
-                required
-              />
-              <div class="valid-feedback">Looks good!</div>
-            </div>
-            <div class="col-md-4 col-xl-3">
-              <label for="validationCustom02" class="form-label"
-                >Last name</label
-              >
-              <input
-                type="text"
-                class="form-control"
-                id="validationCustom02"
-                value="Otto"
-                required
-              />
-              <div class="valid-feedback">Looks good!</div>
-            </div>
-            <div class="col-md-4 col-xl-3">
-              <label for="validationCustomUsername" class="form-label"
-                >Username</label
-              >
-              <div class="input-group has-validation">
-                <span class="input-group-text" id="inputGroupPrepend">@</span>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="validationCustomUsername"
-                  aria-describedby="inputGroupPrepend"
-                  required
-                />
-                <div class="invalid-feedback">Please choose a username.</div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <label for="validationCustom03" class="form-label">City</label>
-              <input
-                type="text"
-                class="form-control"
-                id="validationCustom03"
-                required
-              />
-              <div class="invalid-feedback">Please provide a valid city.</div>
-            </div>
-            <div class="col-md-4">
-              <label for="validationCustom03" class="form-label">City</label>
-              <input
-                type="text"
-                class="form-control"
-                id="validationCustom03"
-                required
-              />
-              <div class="invalid-feedback">Please provide a valid city.</div>
-            </div>
-            <div class="col-md-4">
-              <label for="validationCustom03" class="form-label">City</label>
-              <input
-                type="text"
-                class="form-control"
-                id="validationCustom03"
-                required
-              />
-              <div class="invalid-feedback">Please provide a valid city.</div>
-            </div>
-            <div class="col-md-6">
-              <label for="validationCustom03" class="form-label">City</label>
-              <input
-                type="text"
-                class="form-control"
-                id="validationCustom03"
-                required
-              />
-              <div class="invalid-feedback">Please provide a valid city.</div>
-            </div>
-            <div class="col-md-6">
-              <label for="validationCustom03" class="form-label">City</label>
-              <input
-                type="text"
-                class="form-control"
-                id="validationCustom03"
-                required
-              />
-              <div class="invalid-feedback">Please provide a valid city.</div>
-            </div>
-            <div class="col-md-6">
-              <label for="validationCustom03" class="form-label">City</label>
-              <input
-                type="text"
-                class="form-control"
-                id="validationCustom03"
-                required
-              />
-              <div class="invalid-feedback">Please provide a valid city.</div>
-            </div>
-            <select
-              class="form-select col-md-6"
-              aria-label="Default select example"
-            >
-              <option selected>Open this select menu</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
-
-            <div class="col-12">
-              <button class="btn btn-primary" type="submit">Submit form</button>
-            </div>
-          </form>
+          <table class="table table-hover">
+            <thead class="thead-primary">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Client</th>
+                <th scope="col">Lieu Intervention</th>
+                <th scope="col">Date début</th>
+                <th scope="col">Date fin</th>
+                <th scope="col">Prix total TTC</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Marseille</td>
+                <td>10/03/2022</td>
+                <td>10/03/2022</td>
+                <td>10/03/2022</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
         </main>
       </div>
     </div>
